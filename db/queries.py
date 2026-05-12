@@ -3,7 +3,7 @@ import random
 
 # 1. Load the dataset
 try:
-    df = pd.read_csv("roadsense_10k_dataset.csv")
+    import os; df = pd.read_csv(os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "roadsense_10k_dataset.csv"))
     telemetry_db = df.to_dict(orient="records")
     print(f"--- Successfully loaded {len(telemetry_db)} records ---")
 except Exception as e:
